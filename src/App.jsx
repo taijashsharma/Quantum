@@ -1,22 +1,18 @@
 import "./App.css";
 import { Footer } from "./component/layout/Footer";
 import { Navbar } from "./component/layout/Navbar";
-import { CTA } from "./component/pages/Home/CTA";
-import { FeaturedCourses } from "./component/pages/Home/FeaturedCourses";
-import { Features } from "./component/pages/Home/Features";
-import { Hero } from "./component/pages/Home/Hero";
-import { Testimonials } from "./component/pages/Home/Testimonials";
+import AppRoutes from "./route/AppRoutes";
 
 function App() {
     return (
         <>
-            <Navbar />
-            <Hero />
-            <FeaturedCourses />
-            <Features />
-            <Testimonials />
-            <CTA/>
-            <Footer />
+            <div className="min-h-screen flex flex-col">
+                <Navbar />
+                <main className="flex-grow">
+                    <AppRoutes />
+                </main>
+                <Footer />
+            </div>
         </>
     );
 }

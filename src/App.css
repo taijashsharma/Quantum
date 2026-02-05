@@ -84,3 +84,143 @@
 .bg-card-80 { background-color: hsl(0, 0%, 98%, 0.8); }
 
 .border-border-30 { border-color: hsl(0, 0%, 88%, 0.3); }
+
+
+
+/* Gradient Utils */
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-l {
+  background-image: linear-gradient(to left, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-primary {
+  --tw-gradient-from: var(--primary);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+}
+
+.to-primary {
+  --tw-gradient-to: var(--primary);
+}
+
+.to-primary\/80 {
+  --tw-gradient-to: hsl(0, 84%, 50%, 0.80);
+}
+
+.from-primary\/80 {
+  --tw-gradient-from: hsl(0, 84%, 50%, 0.80);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+}
+
+
+.text-primary-foreground\/80 {
+  color: hsl(0, 0%, 100%, 0.80);
+}
+
+.text-primary\/80 {
+  color: hsl(0, 84%, 50%, 0.80);
+}
+
+.bg-primary\/80 {
+  background-color: hsl(0, 84%, 50%, 0.80);
+}
+
+.bg-background\/90 {
+  background-color: hsl(0, 0%, 100%, 0.90);
+}
+
+.bg-background\/80 {
+  background-color: hsl(0, 0%, 100%, 0.80);
+}
+
+.bg-foreground\/80 {
+  background-color: hsl(0, 0%, 10%, 0.80);
+}
+
+.text-foreground\/80 {
+  color: hsl(0, 0%, 10%, 0.80);
+}
+
+
+.hover\:bg-background\/90:hover {
+  background-color: hsl(0, 0%, 100%, 0.90);
+}
+
+.hover\:bg-primary-foreground\/10:hover {
+  background-color: hsl(0, 0%, 100%, 0.10);
+}
+
+.border-primary\/20 {
+  border-color: hsl(0, 84%, 50%, 0.20);
+}
+
+.border-primary\/50 {
+  border-color: hsl(0, 84%, 50%, 0.50);
+}
+
+.border-primary-foreground\/20 {
+  border-color: hsl(0, 0%, 100%, 0.20);
+}
+
+/* Gradient Directions */
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.bg-gradient-to-l { background-image: linear-gradient(to left, var(--tw-gradient-stops)); }
+.bg-gradient-to-t { background-image: linear-gradient(to top, var(--tw-gradient-stops)); }
+.bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
+
+/* Colors – FROM */
+.from-primary      { --tw-gradient-from: var(--primary); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+.from-primary\/90  { --tw-gradient-from: hsl(0,84%,50%,0.90); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+.from-primary\/80  { --tw-gradient-from: hsl(0,84%,50%,0.80); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+.from-primary\/70  { --tw-gradient-from: hsl(0,84%,50%,0.70); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+.from-primary\/60  { --tw-gradient-from: hsl(0,84%,50%,0.60); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+.from-primary\/50  { --tw-gradient-from: hsl(0,84%,50%,0.50); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent); }
+
+/* Colors – TO */
+.to-primary\/80 { --tw-gradient-to: hsl(0,84%,50%,0.80); }
+.to-primary\/70 { --tw-gradient-to: hsl(0,84%,50%,0.70); }
+.to-primary\/60 { --tw-gradient-to: hsl(0,84%,50%,0.60); }
+.to-primary\/50 { --tw-gradient-to: hsl(0,84%,50%,0.50); }
+.to-primary\/40 { --tw-gradient-to: hsl(0,84%,50%,0.40); }
+.to-primary\/30 { --tw-gradient-to: hsl(0,84%,50%,0.30); }
+
+/* VIA */
+.via-primary\/50 { --tw-gradient-stops: var(--tw-gradient-from), hsl(0,84%,50%,0.50), var(--tw-gradient-to); }
+
+/* Background Opacity */
+.bg-primary\/10 { background-color: hsl(0,84%,50%,0.10); }
+.bg-secondary\/30 { background-color: hsl(0,0%,96%,0.30); }
+.bg-background\/20 { background-color: hsl(0,0%,100%,0.20); }
+
+.text-primary-foreground\/80 { color: hsl(0,0%,100%,0.80); }
+.text-muted-foreground { color: var(--muted-foreground); }
+.text-foreground { color: var(--foreground); }
+
+.border-background { border-color: var(--background); }
+.border-primary { border-color: var(--primary); }
+
+.glass-card {
+  background: hsl(0,0%,100%,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(0,0%,100%,0.25);
+  border-radius: 1rem;
+}
+
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px hsl(0,0%,0%,0.15);
+}

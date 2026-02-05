@@ -2,47 +2,88 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, GraduationCap } from "lucide-react";
 import { Button } from "@/component//ui/button.jsx";
+import { label, sub } from "framer-motion/client";
 
 const navItems = [
     {
-        label: "Platform",
+        label: "Home",
+    },
+    {
+        label: "Roadmaps",
         submenu: [
             {
-                label: "Learning Management",
-                description: "Complete LMS solution",
+                label: "DefSpace & IT Infra Professional",
+                description:
+                    "Prepare for roles in defense-space, and mission-critical IT environments.",
             },
             {
-                label: "Analytics Dashboard",
-                description: "Track learner progress",
+                label: "Cloud Engineering & DevOps",
+                description:
+                    "Master cloud platforms and learn to automate end-to-end deployment pipelines.",
             },
             {
-                label: "Certifications",
-                description: "Industry-recognized certs",
+                label: "Cybersecurity & DevSecOps",
+                description:
+                    "Build secure systems with modern defense strategies and continuous security practices.",
+            },
+            {
+                label: "Business, AI & Data Analytics",
+                description:
+                    "Leverage data, analytics, and AI to drive business decisions and growth.",
+            },
+            {
+                label: "Leadership & Project Mngt.",
+                description:
+                    "Develop leadership capability and learn to deliver projects successfully.",
+            },
+            {
+                label: "Embedded, IOT Software Track",
+                description:
+                    "Design intelligent embedded systems and build connected IoT applications.",
+            },
+            {
+                label: "Programming & DS Essentials",
+                description:
+                    "Strengthen foundational coding skills (C, C++, Python) and understand core Data Structures.",
             },
         ],
     },
     {
-        label: "Courses",
+        label: "Internship",
         submenu: [
-            { label: "Cybersecurity", description: "Protect digital assets" },
-            { label: "Data Science", description: "Master data analytics" },
-            { label: "Cloud Computing", description: "AWS, Azure, GCP" },
             {
-                label: "AI & Machine Learning",
-                description: "Build intelligent systems",
+                label: "Corporate",
+                description:
+                    "Gain hands-on experience in a corporate environment.",
+            },
+            {
+                label: "College / University",
+                description:
+                    "Internship opportunities for college and university students.",
             },
         ],
     },
     {
-        label: "Solutions",
+        label: "More",
         submenu: [
-            { label: "Enterprise", description: "Scale your workforce" },
-            { label: "Government", description: "Public sector training" },
-            { label: "Education", description: "Universities & colleges" },
+            {
+                label: "Blog",
+                description: "Read the latest articles and updates.",
+            },
+            {
+                label: "Resources",
+                description: "Access helpful learning materials and guides.",
+            },
+            {
+                label: "About",
+                description: "Learn more about our mission and team.",
+            },
+            {
+                label: "Contact",
+                description: "Get in touch with us for support or inquiries.",
+            },
         ],
     },
-    { label: "Pricing" },
-    { label: "Resources" },
 ];
 
 export const Navbar = () => {
@@ -50,7 +91,7 @@ export const Navbar = () => {
     const [activeMenu, setActiveMenu] = useState(null);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/30">
+        <nav className="fixed top-0 left-0 right-0 z-50  bg-white">
             <div className="container mx-auto px-6">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
@@ -64,7 +105,7 @@ export const Navbar = () => {
                     </div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden lg:flex items-center gap-1">
+                    <div className="hidden bg-white lg:flex items-center gap-1">
                         {navItems.map((item) => (
                             <div
                                 key={item.label}
@@ -73,7 +114,7 @@ export const Navbar = () => {
                                 onMouseLeave={() => setActiveMenu(null)}
                             >
                                 <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                                    {item.label}
+                                    <a href="/">{item.label}</a>
                                     {item.submenu && (
                                         <ChevronDown className="w-4 h-4" />
                                     )}
@@ -87,13 +128,20 @@ export const Navbar = () => {
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0, y: 10 }}
                                                 transition={{ duration: 0.2 }}
-                                                className="absolute top-full left-0 mt-2 w-72 glass-card p-2 shadow-lg"
+                                                className={`bg-white absolute top-13 left-0 mt-2 glass-card p-3 shadow-lg rounded-lg
+                                                        ${
+                                                            item.submenu
+                                                                .length > 4
+                                                                ? "grid grid-cols-2 w-[550px]"
+                                                                : "grid grid-cols-1 w-90"
+                                                        }
+                                                         gap-x-6 gap-y-2`}
                                             >
                                                 {item.submenu.map((subitem) => (
                                                     <a
                                                         key={subitem.label}
                                                         href="#"
-                                                        className="block p-3 rounded-lg hover:bg-secondary/50 transition-colors"
+                                                        className="block p-2 rounded-lg hover:bg-black/10 transition-colors"
                                                     >
                                                         <div className="font-medium text-foreground">
                                                             {subitem.label}
@@ -114,12 +162,12 @@ export const Navbar = () => {
 
                     {/* CTA Buttons */}
                     <div className="hidden lg:flex items-center gap-3">
-                        <Button
+                        <button
                             variant="ghost"
-                            className="text-muted-foreground hover:text-foreground"
+                            className="text-muted-foreground p-6 hover:text-foreground hover:bg-primary"
                         >
                             Sign In
-                        </Button>
+                        </button>
                         <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
                             Start Free Trial
                         </Button>
